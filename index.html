@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #000;
+			height: 100%;
+		}
+		.right {
+			height: 100%;
+			width: 25%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<iframe src='#' width='720' height='576' frameborder='0' scrolling='no' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="right">></div>
+	<script>
+		const vids = [
+			'https://my.mail.ru/video/embed/699861218621390853',
+			'https://my.mail.ru/video/embed/699861218621390854',
+			'https://my.mail.ru/video/embed/699861218621390855',
+			'https://my.mail.ru/video/embed/699861218621390856',
+			'https://my.mail.ru/video/embed/699861218621390858',
+			'https://my.mail.ru/video/embed/699861218621390859',
+			'https://my.mail.ru/video/embed/699861218621390860',
+			'https://my.mail.ru/video/embed/699861218621390861',
+			'https://my.mail.ru/video/embed/699861218621390862',
+			'https://my.mail.ru/video/embed/699861218621390863',
+			'https://my.mail.ru/video/embed/699861218621390865',
+			'https://my.mail.ru/video/embed/699861218621390867',
+			'https://my.mail.ru/video/embed/699861218621390864',
+			'https://my.mail.ru/video/embed/699861218621390866',
+			'https://my.mail.ru/video/embed/699861218621390868',
+			'https://my.mail.ru/video/embed/699861218621390869',
+			'https://my.mail.ru/video/embed/699861218621390870',
+			'https://my.mail.ru/video/embed/699861218621390871',
+			'https://my.mail.ru/video/embed/699861218621390872',
+			'https://my.mail.ru/video/embed/699861218621390873',
+			'https://my.mail.ru/video/embed/699861218621390874',
+			'https://my.mail.ru/video/embed/699861218621390875',
+			'https://my.mail.ru/video/embed/699861218621390876',
+			'https://my.mail.ru/video/embed/699861218621390877',
+			'https://my.mail.ru/video/embed/699861218621390878',
+			'https://my.mail.ru/video/embed/699861218621390879',
+			'https://my.mail.ru/video/embed/699861218621390880',
+			'https://my.mail.ru/video/embed/699861218621390881',
+			'https://my.mail.ru/video/embed/699861218621390882',
+			'https://my.mail.ru/video/embed/699861218621390883',
+			'https://my.mail.ru/video/embed/699861218621390884',
+			'https://my.mail.ru/video/embed/699861218621390885',
+			'https://my.mail.ru/video/embed/699861218621390886',
+			'https://my.mail.ru/video/embed/699861218621390887',
+			'https://my.mail.ru/video/embed/699861218621390888',
+			'https://my.mail.ru/video/embed/699861218621390889',
+			'https://my.mail.ru/video/embed/699861218621390890',
+			'https://my.mail.ru/video/embed/699861218621390892',
+			'https://my.mail.ru/video/embed/699861218621390893',
+			'https://my.mail.ru/video/embed/699861218621390894',
+			'https://my.mail.ru/video/embed/699861218621390896',
+			'https://my.mail.ru/video/embed/699861218621390895',
+			'https://my.mail.ru/video/embed/699861218621390897',
+			'https://my.mail.ru/video/embed/699861218621390898',
+			'https://my.mail.ru/video/embed/699861218621390900',
+			'https://my.mail.ru/video/embed/699861218621390901',
+			'https://my.mail.ru/video/embed/699861218621390902',
+			'https://my.mail.ru/video/embed/699861218621390904',
+			'https://my.mail.ru/video/embed/699861218621390905',
+			'https://my.mail.ru/video/embed/699861218621390903',
+			'https://my.mail.ru/video/embed/699861218621390906',
+			'https://my.mail.ru/video/embed/699861218621390908',
+			'https://my.mail.ru/video/embed/699861218621390909',
+			'https://my.mail.ru/video/embed/699861218621390912',
+			'https://my.mail.ru/video/embed/699861218621390910',
+			'https://my.mail.ru/video/embed/699861218621390914',
+			'https://my.mail.ru/video/embed/699861218621390911',
+			'https://my.mail.ru/video/embed/699861218621390916',
+			'https://my.mail.ru/video/embed/699861218621390917',
+			'https://my.mail.ru/video/embed/699861218621390918',
+			'https://my.mail.ru/video/embed/699861218621390919',
+			'https://my.mail.ru/video/embed/699861218621390920',
+			'https://my.mail.ru/video/embed/699861218621390921',
+			'https://my.mail.ru/video/embed/699861218621390922',
+			'https://my.mail.ru/video/embed/699861218621390923',
+			'https://my.mail.ru/video/embed/699861218621390924',
+			'https://my.mail.ru/video/embed/699861218621390926',
+			'https://my.mail.ru/video/embed/699861218621390928',
+			'https://my.mail.ru/video/embed/699861218621390929',
+			'https://my.mail.ru/video/embed/699861218621390930',
+			'https://my.mail.ru/video/embed/699861218621390931',
+			'https://my.mail.ru/video/embed/699861218621390932',
+			'https://my.mail.ru/video/embed/699861218621390933',
+			'https://my.mail.ru/video/embed/699861218621390934',
+			'https://my.mail.ru/video/embed/699861218621390935',
+			'https://my.mail.ru/video/embed/699861218621390936',
+			'https://my.mail.ru/video/embed/699861218621390937',
+			'https://my.mail.ru/video/embed/699861218621390938',
+			'https://my.mail.ru/video/embed/699861218621390939',
+			'https://my.mail.ru/video/embed/699861218621390941',
+			'https://my.mail.ru/video/embed/699861218621390940',
+			'https://my.mail.ru/video/embed/699861218621390942',
+			'https://my.mail.ru/video/embed/699861218621390943',
+			'https://my.mail.ru/video/embed/699861218621390944',
+			'https://my.mail.ru/video/embed/699861218621390945',
+			'https://my.mail.ru/video/embed/699861218621390946',
+			'https://my.mail.ru/video/embed/699861218621390947',
+			'https://my.mail.ru/video/embed/699861218621390948',
+			'https://my.mail.ru/video/embed/699861218621390949',
+			'https://my.mail.ru/video/embed/699861218621390950',
+			'https://my.mail.ru/video/embed/699861218621390951',
+			'https://my.mail.ru/video/embed/699861218621390953',
+			'https://my.mail.ru/video/embed/699861218621390954',
+			'https://my.mail.ru/video/embed/699861218621390955',
+			'https://my.mail.ru/video/embed/699861218621390952',
+			'https://my.mail.ru/video/embed/699861218621390956',
+			'https://my.mail.ru/video/embed/699861218621390957',
+			'https://my.mail.ru/video/embed/699861218621390958',
+			'https://my.mail.ru/video/embed/699861218621390959',
+			'https://my.mail.ru/video/embed/699861218621390960',
+			'https://my.mail.ru/video/embed/699861218621390961',
+			'https://my.mail.ru/video/embed/699861218621390962',
+			'https://my.mail.ru/video/embed/699861218621390964',
+			'https://my.mail.ru/video/embed/699861218621390965',
+			'https://my.mail.ru/video/embed/699861218621390966',
+			'https://my.mail.ru/video/embed/699861218621390963',
+			'https://my.mail.ru/video/embed/699861218621390967',
+			'https://my.mail.ru/video/embed/699861218621390968',
+			'https://my.mail.ru/video/embed/699861218621390969',
+			'https://my.mail.ru/video/embed/699861218621390970',
+			'https://my.mail.ru/video/embed/699861218621390971',
+			'https://my.mail.ru/video/embed/699861218621390974',
+			'https://my.mail.ru/video/embed/699861218621390975',
+			'https://my.mail.ru/video/embed/699861218621390976',
+			'https://my.mail.ru/video/embed/699861218621390977',
+			'https://my.mail.ru/video/embed/699861218621390978',
+			'https://my.mail.ru/video/embed/699861218621390980',
+			'https://my.mail.ru/video/embed/699861218621390981',
+			'https://my.mail.ru/video/embed/699861218621390982',
+			'https://my.mail.ru/video/embed/699861218621390983',
+			'https://my.mail.ru/video/embed/699861218621390984',
+			'https://my.mail.ru/video/embed/699861218621390985',
+			'https://my.mail.ru/video/embed/699861218621390986',
+			'https://my.mail.ru/video/embed/699861218621390987',
+			'https://my.mail.ru/video/embed/699861218621390988',
+			'https://my.mail.ru/video/embed/699861218621390989',
+			'https://my.mail.ru/video/embed/699861218621390990',
+			'https://my.mail.ru/video/embed/699861218621390991',
+			'https://my.mail.ru/video/embed/699861218621390992',
+			'https://my.mail.ru/video/embed/699861218621390993',
+			'https://my.mail.ru/video/embed/699861218621390994'
+		]
+		let random = Math.floor(Math.random() * vids.length)
+		let been = []
+		been.push(random)
+		document.querySelector('.right').addEventListener('click', () => {
+			random = Math.floor(Math.random() * vids.length)
+			if(been.includes(random)) {
+				random++
+				if(been.includes(random)) {
+					random = Math.floor(Math.random() * vids.length)
+				}
+				if(random == vids.length) {
+					random = Math.floor(Math.random() * vids.length)
+				}
+			}
+			been.push(random)
+			document.querySelector('iframe').src = vids[random]
+		})
+		document.querySelector('iframe').src = vids[random]
+	</script>
+</body>
+</html>
