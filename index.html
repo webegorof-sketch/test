@@ -182,6 +182,7 @@
 		been.push(random)
 		document.querySelector('.right').addEventListener('click', () => {
 			random = Math.floor(Math.random() * vids.length)
+			document.title = 'Видео:' + ' ' + random
 			if(been.includes(random)) {
 				random++
 				if(been.includes(random)) {
@@ -193,7 +194,6 @@
 			}
 			been.push(random)
 			document.querySelector('iframe').src = vids[random]
-			document.title = 'Видео:' + ' ' + random
 		})
 		document.querySelector('iframe').src = vids[random]
 	</script>
