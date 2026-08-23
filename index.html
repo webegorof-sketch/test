@@ -231,7 +231,7 @@
 		let been = []
 		document.title = 'Видео:' + ' ' + random
 		been.push(random)
-		document.querySelector('.right').addEventListener('click', () => {
+		document.querySelector('.next').addEventListener('click', () => {
 			random = Math.floor(Math.random() * vids.length)
 			document.title = 'Видео:' + ' ' + random
 			if(been.includes(random)) {
