@@ -229,7 +229,6 @@
 			'https://my.mail.ru/video/embed/699861218621391079',
 		]
 		let random = Math.floor(Math.random() * vids.length)
-		const videoTitle = document.querySelector('.v-video-title, .video__title, h1')?.innerText.trim();
 		let been = []
 		document.title = 'Видео:' + ' ' + random
 		been.push(random)
@@ -249,6 +248,35 @@
 			document.querySelector('iframe').src = vids[random]
 		})
 		document.querySelector('iframe').src = vids[random]
+
+		//test
+		const proxy = 'https://herokuapp.com';
+
+async function loadTitles() {
+    const videoData = [];
+
+    for (const embedUrl of vids) {
+        const normalUrl = embedUrl.replace('/video/embed/', '/video/');
+        const apiUrl = `https://mail.ru{encodeURIComponent(normalUrl)}&format=json`;
+        
+        try {
+            // Запрос идет через прокси-сервер
+            const response = await fetch(proxy + apiUrl);
+            const data = await response.json();
+            
+            videoData.push({
+                url: embedUrl,
+                title: data.title // Название пушится в переменную/массив
+            });
+        } catch (err) {
+            videoData.push({ url: embedUrl, title: "Ошибка CORS/Доступа" });
+        }
+    }
+    
+    console.log(videoData); // Вся информация теперь лежит в переменной videoData
+}
+
+loadTitles();
 	</script>
 </body>
 </html>
