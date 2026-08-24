@@ -229,6 +229,7 @@
 			'https://my.mail.ru/video/embed/699861218621391079',
 		]
 		let random = Math.floor(Math.random() * vids.length)
+		const videoTitle = document.querySelector('.v-video-title, .video__title, h1')?.innerText.trim();
 		let been = []
 		document.title = 'Видео:' + ' ' + random
 		been.push(random)
