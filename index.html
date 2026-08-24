@@ -235,7 +235,10 @@
 			'https://my.mail.ru/video/embed/699861218621391081',
 			'https://my.mail.ru/video/embed/699861218621391082',
 		]
-		document.documentElement.outerHTML
+		document.addEventListener('DOMContentLoaded', function() {
+  const fullHTML = document.documentElement.outerHTML;
+  console.log(fullHTML);
+});
 		const testTitle = document.querySelector('window-loaded title')
 		const titleVideo = [
 			'Lilu Moon',
