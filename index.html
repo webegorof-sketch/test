@@ -443,7 +443,8 @@
 		document.title = 'Видео:' + ' ' + random
 		been.push(random)
 		document.querySelector('.next').addEventListener('click', () => {
-			random = Math.floor(Math.random() * vids.length)
+			random--
+			/*random = Math.floor(Math.random() * vids.length)
 			document.title = 'Видео:' + ' ' + random
 			if(been.includes(random)) {
 				random++
@@ -454,7 +455,7 @@
 					random = Math.floor(Math.random() * vids.length)
 				}
 			}
-			been.push(random)
+			been.push(random)*/
 			document.querySelector('iframe').src = vids[random]
 			videoName.textContent = titleVideo[random]
 		})
