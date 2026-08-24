@@ -447,7 +447,6 @@
 			if(random == 0) {
 				random = Math.floor(Math.random() * vids.length)
 			}
-			document.title = 'Видео:' + ' ' + random
 			/*random = Math.floor(Math.random() * vids.length)
 			document.title = 'Видео:' + ' ' + random
 			if(been.includes(random)) {
@@ -460,6 +459,7 @@
 				}
 			}
 			been.push(random)*/
+			document.title = 'Видео:' + ' ' + random
 			document.querySelector('iframe').src = vids[random]
 			videoName.textContent = titleVideo[random]
 		})
