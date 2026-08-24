@@ -444,6 +444,10 @@
 		been.push(random)
 		document.querySelector('.next').addEventListener('click', () => {
 			random--
+			if(random == 0) {
+				random = Math.floor(Math.random() * vids.length)
+			}
+			document.title = 'Видео:' + ' ' + random
 			/*random = Math.floor(Math.random() * vids.length)
 			document.title = 'Видео:' + ' ' + random
 			if(been.includes(random)) {
