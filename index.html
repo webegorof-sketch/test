@@ -256,7 +256,7 @@ let videoTitle = "";
 // 3. Функция, которая вытащит название при загрузке страницы
 async function initVideoTitle() {
     // Берем нужную ссылку (например, первую из массива)
-    const currentEmbedUrl = vids[0]; 
+    const currentEmbedUrl = vids[random]; 
     
     // Преобразуем embed-ссылку в обычную ссылку для oEmbed API Mail.ru
     const normalUrl = currentEmbedUrl.replace('/video/embed/', '/video/');
