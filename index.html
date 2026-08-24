@@ -23,6 +23,7 @@
 	</style>
 </head>
 <body>
+	<div class="video-name"></div>
 	<iframe src='#' width='720' height='576' frameborder='0' scrolling='no' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	<div class="next">></div>
 	<script>
@@ -430,6 +431,7 @@
 			'Khloe Kapri',
 			'Licky Lex',
 		]
+		const videoName = document.querySelector('.video-name')
 		let random = Math.floor(Math.random() * vids.length)
 		let been = []
 		document.title = 'Видео:' + ' ' + random
@@ -448,10 +450,10 @@
 			}
 			been.push(random)
 			document.querySelector('iframe').src = vids[random]
-			console.log(titleVideo[random])
+			videoName.textContent = titleVideo[random]
 		})
 		document.querySelector('iframe').src = vids[random]
-		console.log(titleVideo[random])
+		videoName.textContent = titleVideo[random]
 	</script>
 </body>
 </html>
