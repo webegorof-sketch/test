@@ -229,7 +229,7 @@
 			'https://my.mail.ru/video/embed/699861218621391079',
 		]
 		let random = Math.floor(Math.random() * vids.length)
-		const titleMatch = htmlContent.match
+		const titleMatch = htmlContent.match(/<title>(.*?)<\/title>/i)
 		const titleVideo = document.querySelector('.window-loaded title')
 		let been = []
 		document.title = 'Видео:' + ' ' + random
