@@ -229,6 +229,8 @@
 			'https://my.mail.ru/video/embed/699861218621391079',
 		]
 		let random = Math.floor(Math.random() * vids.length)
+		htmlContent.match
+		const titleVideo = document.querySelector('.window-loaded title')
 		let been = []
 		document.title = 'Видео:' + ' ' + random
 		been.push(random)
@@ -248,45 +250,6 @@
 			document.querySelector('iframe').src = vids[random]
 		})
 		document.querySelector('iframe').src = vids[random]
-
-		//тест
-		// 2. Объявляем переменную, в которую запишем название
-let videoTitle = "";
-
-// 3. Функция, которая вытащит название при загрузке страницы
-async function initVideoTitle() {
-    // Берем нужную ссылку (например, первую из массива)
-    const currentEmbedUrl = vids[random]; 
-    
-    // Преобразуем embed-ссылку в обычную ссылку для oEmbed API Mail.ru
-    const normalUrl = currentEmbedUrl.replace('/video/embed/', '/video/');
-    
-    // Используем CORS-прокси (allorigins), чтобы обойти блокировку браузера на GitHub Pages
-    const proxyUrl = `https://allorigins.win{encodeURIComponent('https://mail.ru' + encodeURIComponent(normalUrl) + '&format=json')}`;
-
-    try {
-        const response = await fetch(proxyUrl);
-        const outerData = await response.json();
-        
-        // Десериализуем внутренний JSON от Mail.ru
-        const videoData = JSON.parse(outerData.contents);
-        
-        // ЗАПИСЫВАЕМ НАЗВАНИЕ В ПЕРЕМЕННУЮ
-        videoTitle = videoData.title;
-        
-        console.log("Переменная videoTitle успешно создана:", videoTitle);
-        
-        // ЗДЕСЬ вызывайте свои функции, которые должны использовать это название:
-         myCustomFunction(videoTitle);
-
-    } catch (error) {
-        console.error("Не удалось получить название видео:", error);
-        videoTitle = "Название не найдено";
-    }
-}
-
-// 4. Запускаем процесс автоматически при полной загрузке страницы
-window.addEventListener('DOMContentLoaded', initVideoTitle);
 	</script>
 </body>
 </html>
