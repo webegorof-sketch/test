@@ -281,7 +281,7 @@
 		const videoName = document.querySelector('.video-name')
 		let random = Math.floor(Math.random() * vids.length)
 		let been = []
-		document.title = 'Видео:' + ' ' + random
+		document.title = titleVideo[random]
 		been.push(random)
 		document.querySelector('.next').addEventListener('click', () => {
 			random = Math.floor(Math.random() * vids.length)
