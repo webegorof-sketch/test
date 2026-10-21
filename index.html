@@ -514,15 +514,14 @@
     // 3. Переводим случайное число в нужный диапазон (от 0 до max - 1)
     return array[0] % max;
 }
-		//let random = Math.floor(Math.random() * vids.length)
 		const random = getTrueRandomInt(vids.length)
 		let been = []
 		document.title = titleVideo[random]
 		been.push(random)
 		document.querySelector('.next').addEventListener('click', () => {
-			random = Math.floor(Math.random() * vids.length)
+			random = getTrueRandomInt(vids.length)
 			while (been.includes(random)) {
-			  random = Math.floor(Math.random() * vids.length);
+			  random = getTrueRandomInt(vids.length);
 			}
 			been.push(random)
 			document.title = titleVideo[random]
