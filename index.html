@@ -504,7 +504,18 @@
 			'Jennifer White'
 		]
 		const videoName = document.querySelector('.video-name')
-		let random = Math.floor(Math.random() * vids.length)
+		function getTrueRandomInt(max) {
+    // 1. Создаем массив из одного 32-битного целого числа
+    const array = new Uint32Array(1);
+    
+    // 2. Заполняем его истинно случайными байтами от ОС
+    window.crypto.getRandomValues(array);
+    
+    // 3. Переводим случайное число в нужный диапазон (от 0 до max - 1)
+    return array[0] % max;
+}
+		//let random = Math.floor(Math.random() * vids.length)
+		const random = getTrueRandomInt(vids.length)
 		let been = []
 		document.title = titleVideo[random]
 		been.push(random)
