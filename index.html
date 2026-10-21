@@ -514,7 +514,7 @@
     // 3. Переводим случайное число в нужный диапазон (от 0 до max - 1)
     return array[0] % max;
 }
-		const random = getTrueRandomInt(vids.length)
+		let random = getTrueRandomInt(vids.length)
 		let been = []
 		document.title = titleVideo[random]
 		been.push(random)
