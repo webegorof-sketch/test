@@ -521,7 +521,7 @@
 		document.querySelector('.next').addEventListener('click', () => {
 			random = getTrueRandomInt(vids.length)
 			while (been.includes(random)) {
-			  random = getTrueRandomInt(vids.length);
+			  random = getTrueRandomInt(vids.length)
 			}
 			been.push(random)
 			document.title = titleVideo[random]
